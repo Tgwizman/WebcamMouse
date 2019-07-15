@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Image Processing</title>
+
+<link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+<body>
+
+<video id="video">Video stream not available.</video>
+<canvas id="raw_camera"></canvas>
+
+<canvas id="processed"></canvas>
+
+<div id="menuHandle" tabindex="0">&gt;</div>
+
+<div id="menu">
+	<div id="dragBar_X"></div>
+
+	<div id="mainMenu">
+		<h1>Webcam Mouse</h1>
+
+		<hr>
+
+		<div><input type="checkbox" id="censorToggle"> Hide Sensitive Data</div>
+		<div><input type="checkbox" id="pixelsToggle"> Highlight Found Pixels</div>
+
+		<div id="filterList">
+			<div class="title">Filter List</div>
+			<div id="addFilter">+</div>
+			<div id="filterList_items"></div>
+		</div>
+	</div>
+
+	<div id="editFilter" style="display:none">
+		<div id="exitEdit">x</div>
+
+		<div id="editingName"></div>
+
+		<hr>
+
+		<div>Filter
+			<select id="filterMode">
+				<option value="No Filter">No Filter</option>
+				<option value="High Contrast">High Contrast</option>
+				<option value="Target Color">Target Color</option>
+				<option value="Light Map">Light Map</option>
+				<option value="Find Green">Find Green</option>
+				<option value="Find Magenta">Find Magenta</option>
+			</select>
+		</div>
+
+		<div id="target_block">
+			Target
+			<input type="button" id="pickColor" value="Pick Color" tabindex="1">
+			<input type="text" id="target_hex" tabindex="2">
+			<canvas id="target_color" tabindex="3"></canvas>
+		</div>
+
+		<div>Tolerance <input type="number" id="toleranceField"></div>
+
+		<div><input type="checkbox" id="invertedToggle"> Inverted</div>
+
+		<hr>
+
+		<div>
+			<input type="checkbox" id="boundingToggle"> Bounding Box
+		</div>
+		<div id="bounding">
+			<input type="button" id="pickBounding" value="Pick Bounding">
+			<!--<input type="button" id="moveBounding" value="Move Bounding">-->
+			<br>
+			X <input type="number" id="bounding_x" step=0.005 min=0 max=1>
+			<br>Y <input type="number" id="bounding_y" step=0.005 min=0 max=1>
+			<br>Width <input type="number" id="bounding_w" step=0.005 min=0 max=1>
+			<br>Height <input type="number" id="bounding_h" step=0.005 min=0 max=1>
+		</div>
+
+		<div id="deadZone_p">
+			<input type="checkbox" id="deadZoneToggle"> Dead Zone
+		</div>
+		<div id="deadZone">
+			<input type="button" id="pickDeadZone" value="Pick Dead Zone">
+			<br>
+			X <input type="number" id="deadZone_x" step=0.005 min=0 max=1>
+			<br>Y <input type="number" id="deadZone_y" step=0.005 min=0 max=1>
+			<br>Width <input type="number" id="deadZone_w" step=0.005 min=0 max=1>
+			<br>Height <input type="number" id="deadZone_h" step=0.005 min=0 max=1>
+		</div>
+
+		<hr>
+
+		<div>Action
+			<select id="filterAction">
+				<option value="No Action">No Action</option>
+				<option value="Mouse Pos">Mouse Pos</option>
+				<option value="Left Mouse">Left Mouse</option>
+				<option value="Right Mouse">Right Mouse</option>
+			</select>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript" src="helper.js"></script>
+<script type="text/javascript" src="dom2.js"></script>
+<script type="text/javascript" src="processing.js"></script>
+<script type="text/javascript" src="webcammouse.js"></script>
+
+</body>
+</html>

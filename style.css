@@ -1,0 +1,166 @@
+video,
+#raw_camera {
+	display: none;
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+#raw_camera,
+#processed {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+	width: calc(100% - 20em);
+	height: 100%;
+	z-index: 1;
+}
+
+#processed {
+	z-index: 2;
+}
+
+#menuHandle {
+	position: absolute;
+	top: 0;
+	padding: 0.25em 0.5em;
+	display: block;
+	color: #000;
+	background: #FFF;
+	border-left: 1px solid #999;
+	border-bottom: 1px solid #999;
+	z-index: 3;
+}
+
+#menu {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 0;
+	padding: 1em;
+	display: block;
+	width: calc(20em - 2em);
+	height: calc(100% - 2em);
+	overflow-y: scroll;
+}
+
+#menu #dragBar_X {
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 0;
+	padding: 0;
+	display: block;
+	width: 1px;
+	height: 100%;
+	background: #FFF;
+	border-left: 1px solid #999;
+	cursor: col-resize;
+}
+
+#menu #filterList {
+	position: relative;
+	margin-top: 1em;
+	display: none;
+	background: #EEE;
+	border: 1px solid #999;
+}
+#menu #filterList .title {
+	margin: 0.5em 0.25em;
+	font-weight: bolder;
+}
+#menu #filterList #addFilter {
+	position: absolute;
+	top: 1.6em;
+	right: 1.6em;
+	margin: 0;
+	padding: 0.2em 0.5em;
+	display: block;
+	width: 0.6em;
+	height: 1.2em;
+	color: #666;
+	background: #EEE;
+	border: 1px solid #999;
+	font-weight: bolder;
+	font-family: monospace;
+	border-radius: 1em;
+}
+#menu #filterList .filter {
+	position: relative;
+	margin-top: 0.66em;
+	height: 1em;
+	background: #CCC;
+}
+#menu #filterList .filter:first-child {
+	margin-top: 0;
+}
+#menu #filterList .filter .name {
+	position: absolute;
+	top: 0;
+	left: 1.8em;
+	display: block;	
+}
+#menu #filterList .filter .edit {
+	position: absolute;
+	top: 0;
+	right: 1em;
+	display: block;
+	width: 1.7em;
+	text-align: right;
+}
+#menu #filterList .filter .remove {
+	position: absolute;
+	top: 0;
+	right: 0;
+	display: block;
+	width: 0.4em;
+	text-align: right;
+}
+#menu #filterList .filter .edit:hover {
+	text-decoration: underline; 
+}
+#menu #filterList .filter .remove:hover {
+	text-decoration: underline; 
+}
+
+#menu #exitEdit {
+	position: absolute;
+	top: 0.75em;
+	right: 0.25em;
+	margin: 0;
+	padding: 0.25em 0.5em;
+	display: block;
+	width: 0.6em;
+	color: #666;
+	font-weight: bolder;
+	font-family: monospace;
+	border-radius: 0.1em;
+	box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.25);
+	z-index: 10;
+}
+
+#menu div {
+	position: relative;
+	margin: 0;
+	padding: 0.5em;
+	display: block;
+	width: calc(100% - 1em);
+}
+
+#menu #editFilter #editingName {
+	margin: 0;
+	padding: 0 0 0.5em;
+	font-size: 1.5em;
+}
+
+#target_color {
+	display: block;
+	width: 14em;
+	height: 14em;
+}
